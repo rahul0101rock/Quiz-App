@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title%}
+QUIZ
+{% endblock %}
+
+{% block content%}
+<form action="./result" id="questions_form" method="post">
+    <script>
+      var questions = [];
+
+    </script>
+    {% for que in ques %}
+    <!-- list in questions js -->
+    <script>
+    questions.push("{{ que.id }}");
+
+    </script>
+    <div class="row">
+        <div class="col-md-10">
+            <h3>{{ forloop.counter }}. {{ que.question }}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <h4>
+                <input name="{{ que.id }}" type="radio" value="{{ que.option_a }}">
+                {{ que.option_a }}
+            </h4>
+        </div>
+        <div class="col-md-3">
+            <h4>
+                <input name="{{ que.id }}" type="radio" value="{{ que.option_b }}">
+                {{ que.option_b }}
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <h4>
+                <input name="{{ que.id }}" type="radio" value="{{ que.option_c }}">
+                {{ que.option_c }}
+            </h4>
+        </div>
+        <div class="col-md-3">
+            <h4>
+                <input class="form_control" name="{{ que.id }}" type="radio" value="{{ que.option_d }}">
+                {{ que.option_d }}
+            </h4>
+        </div>
+    </div>
+    {% endfor %}
+    {% csrf_token %}
+    <br>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+
+        <div class="col-xs-2">
+            <button class="btn btn-block btn-success btn-md" id="btn" onclick="result_function();" type="button">
+                Result
+            </button>
+        </div>
+    </div>
+</form>
+
+<script>
+        <!-- Check if there are questions missed -->
+        var checked = 0;
+        function result_function() {
+        for (const question of questions) {
+        const rbs = document.querySelectorAll('input[name="'+question+'"]');
+            for (const radio_btn of rbs) {
+                if (radio_btn.checked) {
+                    checked = 1;
+                    break;
+                }
+                checked = 0;
+            }
+            if (checked == 0){
+               alert("You didn't finish the test, please check all questions!")
+               return false;
+               break;
+             }
+           }
+           if (checked == 1){
+             document.forms["questions_form"].submit();
+            }
+         }
+
+
+</script>
+
+{% endblock %}

@@ -2,19 +2,67 @@
 {% block title%}
 Quiz App | Home
 {% endblock %}
+{% block css %}
+    <style>
+    .main {
+    background-color: #FFFFFF;
+    width: 85vw;
+    height:100%;
+    margin-top:5%;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    margin-left:auto;
+    margin-bottom:auto;
+    margin-right:auto;
+    }
+    .field{
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right:auto;-
+    text-align: center;
+    margin-bottom: 27px;
+    }
+    .home{
+    padding-top: 40px;
+    color: #8C55AA;
+    font-size: 23px;
+    }
+    </style>
+{% endblock %}
 
 {% block nav %}
 <div class="collapse navbar-collapse" id="navdata">
     <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-
     </ul>
 </div>
 {% endblock %}
 {% block content %}
-<h1 class="center">Welcome to Quiz App</h1>
-<br>
-<h2 class="center">Select the catagory to begin with the Quiz in that catagory</h2>
+<div class="main home">
+    <h1 class="center">Welcome to Quiz App</h1>
+    <br>
+    <h2 class="center">Select the catagory to begin with the Quiz in that catagory</h2>
+    <br>
+    {% for choice in choices %}
+    <div class="row">
+        <div class="offset-md-2 col-md-4">
+            <a href="/{{ choice.0 }}"><h3>{{ choice.1 }}</h3></a>
+            <br>
+        </div>
+
+    </div>
+{% endfor %}
 {% endblock %}
