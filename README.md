@@ -27,3 +27,7 @@ Add or Remove entries from **CAT_CHOICES**
 ### In *Database_manage/questions.csv*
 #### https://github.com/rahul0101rock/Quiz-App/blob/main/Database_manage/questions.csv
 Add or Remove entries from *questions.csv* file
+
+**Then run *importdB.py***
+
+it will update data in table *quizapp_questions* in the database and then it will start showing on website
