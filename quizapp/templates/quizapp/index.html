@@ -15,25 +15,6 @@ Quiz App | Home
     margin-bottom:auto;
     margin-right:auto;
     }
-    .field{
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right:auto;-
-    text-align: center;
-    margin-bottom: 27px;
-    }
     .home{
     padding-top: 40px;
     color: #8C55AA;
@@ -45,7 +26,7 @@ Quiz App | Home
 {% block nav %}
 <div class="collapse navbar-collapse" id="navdata">
     <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link active" href="">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
     </ul>
 </div>
@@ -59,7 +40,7 @@ Quiz App | Home
     {% for choice in choices %}
     <div class="row">
         <div class="offset-md-2 col-md-4">
-            <a href="/{{ choice.0 }}"><h3>{{ choice.1 }}</h3></a>
+            <a href="/quiz/{{ choice.0 }}"><h3>{{ choice.1 }}</h3></a>
             <br>
         </div>
 

@@ -6,6 +6,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('result/', views.result, name='result'),
     path('about/', views.about, name='about'),
-    re_path(r'^(?P<choice>[\w]+)', views.questions, name='questions'),
+    re_path(r'^quiz/(?P<choice>[\w]+)', views.questions, name='questions'),
 
 ]

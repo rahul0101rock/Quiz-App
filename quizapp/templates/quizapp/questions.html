@@ -3,9 +3,37 @@
 {% block title%}
 QUIZ
 {% endblock %}
-
+{% block css %}
+    <style>
+    .main {
+    background-color: #FFFFFF;
+    width: 85vw;
+    height:100%;
+    margin-top:5%;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    margin-left:auto;
+    margin-bottom:auto;
+    margin-right:auto;
+    }
+    .home{
+    padding-top: 40px;
+    color: #8C55AA;
+    font-size: 23px;
+    }
+    </style>
+{% endblock %}
+{% block nav %}
+<div class="collapse navbar-collapse" id="navdata">
+    <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+    </ul>
+</div>
+{% endblock %}
 {% block content%}
-<form action="./result" id="questions_form" method="post">
+<div class="main"><br>
+<form action="/result/" id="questions_form" method="post">
     <script>
       var questions = [];
 
@@ -16,12 +44,12 @@ QUIZ
     questions.push("{{ que.id }}");
 
     </script>
-    <div class="row">
+    <div class="row offset-1">
         <div class="col-md-10">
             <h3>{{ forloop.counter }}. {{ que.question }}</h3>
         </div>
     </div>
-    <div class="row">
+    <div class="row offset-1">
         <div class="col-md-1"></div>
         <div class="col-md-3">
             <h4>
@@ -36,7 +64,7 @@ QUIZ
             </h4>
         </div>
     </div>
-    <div class="row">
+    <div class="row offset-1">
         <div class="col-md-1"></div>
         <div class="col-md-3">
             <h4>
@@ -54,18 +82,16 @@ QUIZ
     {% endfor %}
     {% csrf_token %}
     <br>
-    <div class="row">
-        <div class="col-md-1">
-        </div>
-
-        <div class="col-xs-2">
-            <button class="btn btn-block btn-success btn-md" id="btn" onclick="result_function();" type="button">
+    <div class="row offset-5 col-2">
+        <div class="col center">
+            <button class="btn btn-success btn-lg" id="btn" onclick="result_function();" type="button">
                 Result
             </button>
+            <br><br>
         </div>
     </div>
 </form>
-
+</div>
 <script>
         <!-- Check if there are questions missed -->
         var checked = 0;

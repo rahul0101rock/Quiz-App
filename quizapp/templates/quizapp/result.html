@@ -3,8 +3,16 @@
 {% block title%}
 Result
 {% endblock %}
-
+{% block nav %}
+<div class="collapse navbar-collapse" id="navdata">
+    <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+    </ul>
+</div>
+{% endblock %}
 {% block content%}
+<br>
 <div class="row">
     <div class="col-xs-12">
         <h3 class="center">
@@ -12,6 +20,7 @@ Result
         </h3>
     </div>
 </div>
+<br>
 <div class="row">
   <div class="col-xs-12">
     <h3 class="center"
