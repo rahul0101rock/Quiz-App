@@ -35,11 +35,11 @@ Quiz App | Home
 <div class="main home">
     <h1 class="center">Welcome to Quiz App</h1>
     <br>
-    <h2 class="center">Select the catagory to begin with the Quiz in that catagory</h2>
+    <h2 class="center">Select the catagory to begin the Quiz</h2>
     <br>
     {% for choice in choices %}
     <div class="row">
-        <div class="offset-md-2 col-md-4">
+        <div class="center">
             <a href="/quiz/{{ choice.0 }}"><h3>{{ choice.1 }}</h3></a>
             <br>
         </div>

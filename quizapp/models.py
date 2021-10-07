@@ -6,7 +6,7 @@ from django.db import models
 class Questions(models.Model):
     CAT_CHOICES = (
         ('python', 'Python'),
-        ('django', 'Django Knowledge'),
+        ('django', 'Django'),
         ('numpy', 'Numpy'),
         ('java', 'Core Java'),
     )

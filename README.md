@@ -16,7 +16,7 @@ This create necessary tables for django and **Create table for model Questions (
 ```python
 CAT_CHOICES = (
         ('python', 'Python'),
-        ('django', 'Django Knowledge'),
+        ('django', 'Django'),
         ('numpy', 'Numpy'),
         ('java', 'Core Java'),
     )
