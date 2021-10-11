@@ -1,6 +1,5 @@
 # Quiz-App
-This is a simple Quiz Application, which offers simple quiz in multiple catagories.
-Each catagory contains 10 questions (or more). when user submit the answer, user gets his/her score and the efficiency on the basis of his/her answers.
+This is a simple Quiz Application, which offers simple quiz in multiple categories. Each category contains 10 questions (or more). when user submit the answer, user gets his/her score and the efficiency on the basis of his/her answers. 
 ## https://nvquizapp.pythonanywhere.com/
 
 ## Starting Quiz App
